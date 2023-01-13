@@ -141,7 +141,10 @@ class App extends React.Component {
     // });
 
     this.db
+
       .collection('products')
+      // .where('price', '>', 50)
+      // .orderBy('price', 'desc')
       .onSnapshot((snapshot) => {
         let products = snapshot.docs.map((doc) => {
           const data = doc.data();
